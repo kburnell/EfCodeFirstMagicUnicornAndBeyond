@@ -11,7 +11,7 @@ namespace Demo1 {
         static void Main(string[] args) {
             Database.SetInitializer(new DataContextInitializer());
             Demo1DataContext context = new Demo1DataContext();
-            ICollection <Manufacturer> manufacturers = context.Manufacturers.ToList();
+            IList <Manufacturer> manufacturers = context.Manufacturers.ToList();
         }
     }
 }

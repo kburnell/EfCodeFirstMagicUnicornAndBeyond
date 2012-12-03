@@ -1,16 +1,23 @@
-﻿using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Spatial;
-using Demo1.Domain;
-using Demo1.Enumerations;
-
-namespace Demo1.DataContext {
-
-    public class DataContextInitializer : DropCreateDatabaseIfModelChanges<Demo1DataContext> {
-
-
-        
-        private Manufacturer _astonMartin;
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>ef15</Title>
+      <Author>Skyline</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>
+        ef15
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="csharp"><![CDATA[
+         private Manufacturer _astonMartin;
         private Model _astonMartinDB9;
         private Engine _astonMartinV12;
         private Model _astonMartinV12Vantage;
@@ -72,8 +79,7 @@ namespace Demo1.DataContext {
             _porsche911GT2R2 = new Model { Name = "911 GT2 R2", BasePrice = 245000, Year = 2012, Manufacturer = _porsche, AvailableEngines = new List<Engine> { _porscheStraight6 }, EngineLocation = EngineLocationType.Rear };
             new List<Model> { _ferrari458Italia, _ferrariScaglietti, _lamborghiniAventador, _lamborghiniGallardo, _astonMartinDB9, _astonMartinV12Vantage, _porsche911GT2R2 }.ForEach(x => context.Models.Add(x));
         }
-            
-            
-
-    }
-}
+            ]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

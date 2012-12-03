@@ -14,6 +14,7 @@ namespace Demo1.DataContext {
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder) {
+
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
             modelBuilder.Entity<Model>().HasMany(x => x.AvailableEngines)
@@ -21,11 +22,8 @@ namespace Demo1.DataContext {
                   .Map(x => x.MapLeftKey("ModelId").MapRightKey("EngineId").ToTable("ModelAvailableEngines"));
 
 
-
             modelBuilder.Entity<Manufacturer>().Property(x => x.Country).IsRequired().HasMaxLength(100);
-          
-            
-            
+                      
             base.OnModelCreating(modelBuilder);
         }
             
