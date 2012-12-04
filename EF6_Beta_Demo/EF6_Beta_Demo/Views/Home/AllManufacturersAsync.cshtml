@@ -1,0 +1,9 @@
+﻿@model List<EF6_Beta_Demo.Models.Manufacturer>
+@{
+    ViewBag.Title = "Load All Manufacturers - Async!";
+}
+
+<h1>@ViewBag.Title</h1>
+@foreach(var manufacturer in Model) {
+     <h3>@manufacturer.Name</h3>
+ }
