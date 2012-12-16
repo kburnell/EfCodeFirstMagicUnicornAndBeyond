@@ -26,25 +26,25 @@ namespace EF6_Beta_Demo.DataContext {
         }
 
         private void RegisterCustomConventions(DbModelBuilder modelBuilder) {
-            ////Default Max Length to avoid VarChar Max
-            //modelBuilder.Conventions.Add(
-            //    entities => entities.Properties()
-            //        .Where(property => property.PropertyType == typeof(string))
-            //        .Configure(config => config.MaxLength = 100));
+            //Default Max Length to avoid VarChar Max
+            modelBuilder.Conventions.Add(
+                entities => entities.Properties()
+                    .Where(property => property.PropertyType == typeof(string))
+                    .Configure(config => config.MaxLength = 100));
 
-            ////Default Strings to Non-Nullable
-            //modelBuilder.Conventions.Add(
-            //    entities => entities.Properties()
-            //        .Where(property => property.PropertyType == typeof(string))
-            //        .Configure(config => config.IsNullable = false));
+            //Default Strings to Non-Nullable
+            modelBuilder.Conventions.Add(
+                entities => entities.Properties()
+                    .Where(property => property.PropertyType == typeof(string))
+                    .Configure(config => config.IsNullable = false));
 
 
-            
-            ////Add Custom Primary Key Convention
-            //modelBuilder.Conventions.Add(
-            //    entities => entities.Properties()
-            //        .Where(prop => prop.Name.EndsWith("Key"))
-            //        .Configure(config => config.IsKey()));
+
+            //Add Custom Primary Key Convention
+            modelBuilder.Conventions.Add(
+                entities => entities.Properties()
+                    .Where(prop => prop.Name.EndsWith("Key"))
+                    .Configure(config => config.IsKey()));
 
 
         }
