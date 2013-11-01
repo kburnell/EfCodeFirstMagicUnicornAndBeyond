@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using EF6_Beta_Demo.DataContext;
@@ -21,13 +23,14 @@ namespace EF6_Beta_Demo.Controllers {
         }
 
         public async Task<ActionResult> AllManufacturersAsync() {
+            //_db.Database.Log = Log;
             List<Manufacturer> model = await _db.Manufacturers.ToListAsync();
             return View(model);
         }
 
         [HttpGet]
         public async Task<ActionResult> EditAsync(int id) {
-            Manufacturer model = await _db.Manufacturers.FindAsync(id);
+            Manufacturer model = await _db.Manufacturers.FirstAsync(x => x.Id == id);
             return View(model);
         }
 
@@ -39,6 +42,10 @@ namespace EF6_Beta_Demo.Controllers {
                 return RedirectToAction("Index");
             }
             return View(manufacturer);
+        }
+
+        private void Log(string logMessage) {
+            Debug.WriteLine(logMessage);
         }
     }
 }

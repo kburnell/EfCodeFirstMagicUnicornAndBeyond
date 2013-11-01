@@ -3,6 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF6_Beta_Demo", "EF6_Beta_Demo\EF6_Beta_Demo.csproj", "{F4B0EDF0-8975-4A28-B48F-C9C267BEBB26}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{72DC694D-D626-45CF-85A5-1AF895B6B42A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit", "Unit", "{A076BDDD-9755-4C66-AC44-6C3A7A9B669C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF6_Beta_Demo_Tests_Unit", "EF6_Beta_Demo_Tests_Unit\EF6_Beta_Demo_Tests_Unit.csproj", "{3310F6EE-BBA9-42D0-9D75-FD40CDEE8CD1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,8 +19,16 @@ Global
 		{F4B0EDF0-8975-4A28-B48F-C9C267BEBB26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4B0EDF0-8975-4A28-B48F-C9C267BEBB26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4B0EDF0-8975-4A28-B48F-C9C267BEBB26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3310F6EE-BBA9-42D0-9D75-FD40CDEE8CD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3310F6EE-BBA9-42D0-9D75-FD40CDEE8CD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3310F6EE-BBA9-42D0-9D75-FD40CDEE8CD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3310F6EE-BBA9-42D0-9D75-FD40CDEE8CD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A076BDDD-9755-4C66-AC44-6C3A7A9B669C} = {72DC694D-D626-45CF-85A5-1AF895B6B42A}
+		{3310F6EE-BBA9-42D0-9D75-FD40CDEE8CD1} = {A076BDDD-9755-4C66-AC44-6C3A7A9B669C}
 	EndGlobalSection
 EndGlobal

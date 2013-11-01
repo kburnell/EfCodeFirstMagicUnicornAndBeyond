@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Spatial;
 using EF6_Beta_Demo.Enumerations;
 using EF6_Beta_Demo.Models;
 
