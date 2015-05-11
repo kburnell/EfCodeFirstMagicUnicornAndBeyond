@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>ef19</Title>
+      <Author>Skyline</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>
+        ef19
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="csharp"><![CDATA[
+        //Add Custom Primary Key Convention
+            modelBuilder.Properties()
+                    .Where(prop => prop.Name.EndsWith("Key"))
+                    .Configure(config => config.IsKey());
+            ]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

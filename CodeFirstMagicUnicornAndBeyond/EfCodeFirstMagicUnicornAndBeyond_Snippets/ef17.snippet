@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>ef17</Title>
+      <Author>Skyline</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>
+        ef17
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="csharp"><![CDATA[
+        static void Main(string[] args)
+        {
+            DoSomethingAsync();
+
+            
+            Console.WriteLine("Tada!");
+
+            
+            Console.ReadKey();
+            
+        }
+
+        public static async Task DoSomethingAsync()
+        {
+            Console.WriteLine("Doing Something Async");
+            using (var context = new Demo1DataContext())
+            {
+                
+                //THIS IS DEMO-WARE --- DO NOT DO THIS IN PRODUCTION -- Please Have a Proper Data Access Layer!!!!
+                IList<Manufacturer> manufacturers = await context.Manufacturers.ToListAsync();
+                Console.WriteLine(string.Format("Ferrari is {0} miles from Lamborghini.", Math.Round(manufacturers[0].Location.Distance(manufacturers[1].Location).Value / 1609.344, 2)));
+            }
+        }
+            ]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
