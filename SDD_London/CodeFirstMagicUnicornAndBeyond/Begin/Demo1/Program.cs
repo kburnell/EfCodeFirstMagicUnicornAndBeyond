@@ -11,10 +11,12 @@ namespace Demo1 {
 
         static void Main(string[] args) {
 
+            //THIS IS DEMO-WARE --- DO NOT DO THIS IN PRODUCTION -- Please Have a Proper Data Access Layer!!!!
             Database.SetInitializer(new DataContextInitializer());
+
+
             using (var context = new Demo1DataContext())
             {
-                //THIS IS DEMO-WARE --- DO NOT DO THIS IN PRODUCTION -- Please Have a Proper Data Access Layer!!!!
                 IList<Manufacturer> manufacturers = context.Manufacturers.ToList();    
             }
             

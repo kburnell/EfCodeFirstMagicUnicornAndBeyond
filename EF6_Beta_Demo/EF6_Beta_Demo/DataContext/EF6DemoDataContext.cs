@@ -20,7 +20,7 @@ namespace EF6_Beta_Demo.DataContext {
             modelBuilder.Entity<Model>().HasMany(x => x.AvailableEngines)
                   .WithMany(x => x.AvailableIn)
                   .Map(x => x.MapLeftKey("ModelId").MapRightKey("EngineId").ToTable("ModelAvailableEngines"));
-            
+            modelBuilder.Entity<Part>().MapToStoredProcedures();
             base.OnModelCreating(modelBuilder);
         }
 

@@ -1,15 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Spatial;
+using System.Data.Entity.Spatial;
 using Demo1.Domain;
 using Demo1.Enumerations;
 
 namespace Demo1.DataContext {
 
-    public class DataContextInitializer : DropCreateDatabaseIfModelChanges<Demo1DataContext> {
+    public class DataContextInitializer : DropCreateDatabaseIfModelChanges<Demo1DataContext>
+    {
 
-
-        
         private Manufacturer _astonMartin;
         private Model _astonMartinDB9;
         private Engine _astonMartinV12;
@@ -73,7 +72,5 @@ namespace Demo1.DataContext {
             new List<Model> { _ferrari458Italia, _ferrariScaglietti, _lamborghiniAventador, _lamborghiniGallardo, _astonMartinDB9, _astonMartinV12Vantage, _porsche911GT2R2 }.ForEach(x => context.Models.Add(x));
         }
             
-            
-
     }
 }
